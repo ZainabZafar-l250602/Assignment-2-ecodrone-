@@ -1,0 +1,286 @@
+/* ------------------ */
+/* Global Styles      */
+/* ------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------ */
+/* Header / Navigation*/
+/* ------------------ */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    color: #27ae60;
+    outline: none;
+}
+
+/* ------------------ */
+/* Hero Section       */
+/* ------------------ */
+#hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Hero Button - Interactive Component 1 */
+.btn-primary {
+    background: white;
+    color: #27ae60;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.05);
+    background: #ecf0f1;
+    outline: none;
+}
+
+/* ------------------ */
+/* Features Section   */
+/* ------------------ */
+#features {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.feature-card:hover,
+.feature-card:focus {
+    transform: translateY(-5px);
+    background-color: #bdc3c7;
+    outline: none;
+}
+
+.feature-card svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+/* ------------------ */
+/* Form Section       */
+/* ------------------ */
+#form {
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#form label {
+    font-weight: bold;
+}
+
+#form input[type="text"],
+#form input[type="email"],
+#form select,
+#form textarea {
+    padding: 0.5rem;
+    border: 2px solid #27ae60;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#form input:focus,
+#form select:focus,
+#form textarea:focus {
+    outline: 3px solid #2ecc71;
+}
+
+/* ------------------ */
+/* Custom Checkboxes   */
+/* ------------------ */
+.custom-checkbox,
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide default inputs */
+.custom-checkbox input,
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Checkmark box */
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #27ae60;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+}
+
+/* Checkbox checked */
+.custom-checkbox input:checked + .checkmark {
+    background: #27ae60;
+}
+
+/* Tick mark */
+.checkmark::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Radio circle */
+.radiomark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #27ae60;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+}
+
+/* Radio checked */
+.custom-radio input:checked + .radiomark::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #27ae60;
+}
+
+/* Submit Button */
+#form button {
+    align-self: flex-start;
+}
+
+/* ------------------ */
+/* Footer             */
+/* ------------------ */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* ------------------ */
+/* Responsive Design  */
+/* ------------------ */
+
+/* Tablet */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #hero {
+        padding: 3rem 1rem;
+    }
+    #features {
+        padding: 3rem 1rem;
+    }
+    #form {
+        padding: 3rem 1rem;
+    }
+}
